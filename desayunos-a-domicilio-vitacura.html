@@ -24,8 +24,8 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#8f452c">
-  <!-- GA4 aquí: pegar script de Google Analytics 4 -->
-  <!-- GSC aquí: pegar meta verification de Google Search Console -->
+  <!-- GA4: agregar Measurement ID cuando esté disponible -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -62,9 +62,25 @@
     "addressRegion": "Región Metropolitana",
     "addressCountry": "CL"
   },
+  "telephone": "+56971047983",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+56971047983",
+    "contactType": "customer service",
+    "availableLanguage": "Spanish",
+    "areaServed": "CL"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "20:00"
+    }
+  ],
   "priceRange": "$$",
   "currenciesAccepted": "CLP",
-  "paymentAccepted": "Transferencia, efectivo al recibir [confirmar con operador]"
+  "paymentAccepted": "Transferencia bancaria, efectivo al recibir"
 }
   </script>
   <script type="application/ld+json">
@@ -93,7 +109,7 @@
       "name": "¿Cómo se paga?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El pago se coordina al confirmar el pedido (transferencia u otra modalidad que indique el operador). No hay pasarela online: todo se cierra por WhatsApp de forma clara y transparente."
+        "text": "El pago se coordina al confirmar el pedido por transferencia bancaria o efectivo al recibir. No hay pasarela online: todo se cierra por WhatsApp de forma clara y transparente."
       }
     },
     {
@@ -122,7 +138,7 @@
     {
       "@type": "Product",
       "name": "Box Clásico 365sorpresa",
-      "description": "Desayuno sorpresa a domicilio con selección dulce y salada. [MENU_PLACEHOLDER]",
+      "description": "Desayuno sorpresa a domicilio con selección dulce y salada. Incluye croissant o sándwich artesanal, fruta de estación, jugo natural o café, mermelada, tarjeta con dedicatoria y detalle floral.",
       "image": "https://365sorpresa.cl/assets/img/box-clasico.webp",
       "brand": {
         "@type": "Brand",
@@ -133,8 +149,41 @@
         "priceCurrency": "CLP",
         "price": "28990",
         "availability": "https://schema.org/InStock",
+        "sku": "365-BOX-CLASICO",
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "CLP"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "CL"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "CL",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
         "url": "https://365sorpresa.cl",
-        "description": "[MENU_PLACEHOLDER] Precio real por confirmar con el operador"
+        "description": "Precio referencial en CLP. Entrega a domicilio en Providencia, Las Condes, Vitacura y Ñuñoa. Coordinación por WhatsApp."
       }
     }
   ]
@@ -158,7 +207,7 @@
           <li><a href="desayunos-a-domicilio-nunoa.html">Ñuñoa</a></li>
           <li><a href="regalos-corporativos-santiago.html">Empresas</a></li>
           <li><a href="blog/">Blog</a></li>
-          <li class="nav__cta"><a class="btn btn--whatsapp" data-track="whatsapp" data-label="nav" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a></li>
+          <li class="nav__cta"><a class="btn btn--whatsapp" data-track="whatsapp" data-label="nav" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a></li>
         </ul>
       </nav>
     </div>
@@ -173,7 +222,7 @@
           <p class="lead">Para Vitacura cuidamos cada detalle: desayuno gourmet, presentación impecable y entrega discreta cuando quieres sorprender.</p>
           <p class="lead" style="font-size:.95rem;margin-top:.75rem">desayunos a domicilio vitacura · desayuno sorpresa vitacura · desayuno gourmet a domicilio vitacura</p>
           <div class="btn-group">
-            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="hero-vitacura" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a>
+            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="hero-vitacura" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a>
             <a class="btn btn--ghost" href="#sectores">Ver sectores</a>
           </div>
         </div>
@@ -196,7 +245,7 @@
     <aside class="promo" data-season="madre" aria-label="Promoción estacional">
       <div class="container promo__inner">
         <p><strong>Fecha especial en Vitacura</strong> Reserva tu box con anticipación. Cupos limitados por jornada.</p>
-        <a class="btn" data-track="whatsapp" data-label="promo-vitacura" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.%20Tambi%C3%A9n%20quiero%20reservar%20para%20una%20fecha%20especial.">Reservar</a>
+        <a class="btn" data-track="whatsapp" data-label="promo-vitacura" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.%20Tambi%C3%A9n%20quiero%20reservar%20para%20una%20fecha%20especial.">Reservar</a>
       </div>
     </aside>
 
@@ -235,7 +284,7 @@
               <meta itemprop="priceCurrency" content="CLP">
               <meta itemprop="price" content="28990"><link itemprop="availability" href="https://schema.org/InStock"><span>$28.990</span>
             </p>
-            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Clásico" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Cl%C3%A1sico.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Clásico</a>
+            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Clásico" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Cl%C3%A1sico.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Clásico</a>
           </div>
         </article>
         <article class="product reveal" itemscope itemtype="https://schema.org/Product">
@@ -249,7 +298,7 @@
               <meta itemprop="priceCurrency" content="CLP">
               <meta itemprop="price" content="34990"><link itemprop="availability" href="https://schema.org/InStock"><span>$34.990</span>
             </p>
-            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Romántico" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Rom%C3%A1ntico.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Romántico</a>
+            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Romántico" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Rom%C3%A1ntico.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Romántico</a>
           </div>
         </article>
         <article class="product reveal" itemscope itemtype="https://schema.org/Product">
@@ -263,7 +312,7 @@
               <meta itemprop="priceCurrency" content="CLP">
               <meta itemprop="price" content="32990"><link itemprop="availability" href="https://schema.org/InStock"><span>$32.990</span>
             </p>
-            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Cumpleaños" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Cumplea%C3%B1os.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Cumpleaños</a>
+            <a class="btn btn--whatsapp" data-track="whatsapp" data-label="Box Cumpleaños" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20me%20interesa%20el%20Box%20Cumplea%C3%B1os.%20Vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura.">Quiero el Box Cumpleaños</a>
           </div>
         </article>
         </div>
@@ -325,7 +374,7 @@
         </details>
         <details>
           <summary>¿Cómo se paga?</summary>
-          <p>El pago se coordina al confirmar el pedido (transferencia u otra modalidad que indique el operador). No hay pasarela online: todo se cierra por WhatsApp de forma clara y transparente.</p>
+          <p>El pago se coordina al confirmar el pedido por transferencia bancaria o efectivo al recibir. No hay pasarela online: todo se cierra por WhatsApp de forma clara y transparente.</p>
         </details>
         <details>
           <summary>¿Puedo pedir un desayuno de aniversario en Vitacura?</summary>
@@ -343,7 +392,7 @@
       <div class="container">
         <h2>Pide tu desayuno en Vitacura</h2>
         <p>Un mensaje basta. Te respondemos con opciones, horarios y precio cerrado.</p>
-        <a class="btn btn--whatsapp" data-track="whatsapp" data-label="cta-vitacura" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a>
+        <a class="btn btn--whatsapp" data-track="whatsapp" data-label="cta-vitacura" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20vengo%20desde%20la%20p%C3%A1gina%20de%20Vitacura%20y%20quiero%20pedir%20un%20desayuno%20sorpresa.">Pedir por WhatsApp</a>
       </div>
     </section>
   </main>
@@ -375,10 +424,10 @@
     </div>
     <div class="container footer-bottom">
       <span>© 365sorpresa · Santiago Oriente</span>
-      <span>Pedidos 100% por WhatsApp</span>
+      <span>Pedidos por WhatsApp · <a href="https://wa.me/56971047983">+56 9 7104 7983</a></span>
     </div>
   </footer>
-  <a class="wa-float" data-track="whatsapp" data-label="float" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%20365sorpresa%2C%20quiero%20informaci%C3%B3n%20para%20pedir." aria-label="Escribir por WhatsApp">
+  <a class="wa-float" data-track="whatsapp" data-label="float" href="https://wa.me/56971047983?text=Hola%20365sorpresa%2C%20quiero%20informaci%C3%B3n%20para%20pedir." aria-label="Escribir por WhatsApp">
     <span class="wa-float__label">WhatsApp</span>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.4 17.1L1.5 22.5l5.5-.9A11 11 0 0 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3.2.5.5-3.1-.2-.3a9 9 0 1 1 7.8 4.4zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.3-.4.1-.3-.1-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5 2.3 1 2.3.7 2.7.6.4-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1s-.3-.2-.6-.3z"/></svg>
   </a>

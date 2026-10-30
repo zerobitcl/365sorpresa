@@ -4,8 +4,8 @@
   "description": "Desayunos y regalos sorpresa a domicilio en Providencia, Las Condes, Vitacura y Ñuñoa.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f7f0e8",
-  "theme_color": "#8f452c",
+  "background_color": "#fff6f1",
+  "theme_color": "#c43b4b",
   "lang": "es-CL",
   "icons": [
     {

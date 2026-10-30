@@ -1,6 +1,6 @@
 /**
  * 365sorpresa — vanilla JS
- * Menú móvil, reveal on scroll, tracking de clics WhatsApp
+ * Menú móvil, reveal on scroll, tracking WhatsApp / llamada
  */
 (function () {
   "use strict";
@@ -66,30 +66,31 @@
     });
   }
 
-  /* Click tracking — WhatsApp CTAs */
-  function trackWa(label) {
-    /* Cuando GA4 esté activo:
-       gtag('event', 'whatsapp_click', { event_category: 'conversion', event_label: label });
-    */
+  function trackEvent(name, label) {
     if (typeof window.gtag === "function") {
-      window.gtag("event", "whatsapp_click", {
+      window.gtag("event", name, {
         event_category: "conversion",
-        event_label: label || "whatsapp",
+        event_label: label || name,
       });
     }
   }
 
   document.querySelectorAll("[data-track='whatsapp']").forEach(function (el) {
     el.addEventListener("click", function () {
-      trackWa(el.getAttribute("data-label") || el.textContent.trim());
+      trackEvent("whatsapp_click", el.getAttribute("data-label") || el.textContent.trim());
     });
   });
 
-  /* Header shadow on scroll */
+  document.querySelectorAll("[data-track='call']").forEach(function (el) {
+    el.addEventListener("click", function () {
+      trackEvent("phone_click", el.getAttribute("data-label") || "call");
+    });
+  });
+
   if (header) {
     var onScroll = function () {
       header.style.boxShadow =
-        window.scrollY > 12 ? "0 8px 24px rgba(44,36,30,0.06)" : "none";
+        window.scrollY > 12 ? "0 8px 24px rgba(30,23,20,0.08)" : "none";
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
